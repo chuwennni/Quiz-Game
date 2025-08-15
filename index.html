@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizigga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/app.css">
+    <link rel="stylesheet" href="/CSS/loader.css">
+    <link rel="stylesheet" href="/CSS/animation.css">
+</head>
+<body>
+
+  <div class="loader">
+    <div id="throbber1" class="throbber"></div>
+    <div id="throbber2" class="throbber"></div>
+    <div id="throbber3" class="throbber"></div>
+  </div>
+
+  <div class="app">
+    <div class="title">
+      <h1>Quizigga</h1>
+      <p><small>"Test your knowledge, ACLCIANS are smart, are you?"</small></p>
+    </div>
+    <div class="buttons">
+      <button id="start-game" class="hover" onclick="GoToGame()">Start Game</button>
+      <button id="settings" onclick="ShowSettings()" class="hover">Settings</button>
+      <button id="leaderboard" onclick="ShowLeaderboards()" class="hover">LeaderBoards</button>
+    </div>
+  </div>
+
+  <div class="settings-menu app" style="display: none">
+      <div class="settings-options">
+        <div class="settings-title">
+          <button id="close-button" class="hover"><i class="fa-solid fa-circle-arrow-left" ></i></button>
+          <h2>Settings</h2>
+        </div>
+        <div class="settings-option">
+          <div class="dark-mode button-div">
+            <p>Dark Mode</p>
+            <button class="settingsButton hover" id="darkmode-button" onclick="toggleTheme()"><i class="fa-solid fa-moon" id="dark-mode-icon"></i></button>
+          </div>
+          <div class="how-to-play button-div">
+            <p>How To Play:</p>
+            <button class="settingsButton hover" id="hotToplay" onclick="ShowHowToPlay()"><i class="fa-solid fa-question-circle"></i></button>
+          </div>
+          <div class="contact">
+            <h3>Contact us</h3>
+            <div class="facebook button-div">
+              <p>Facebook</p>
+              <a class="settingsButton hover" href="http://www.facebook.com/christiandale.dechavez.9/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <div class="github button-div">
+              <p>Github</p>
+               <a class="settingsButton hover" href="http://www.github.com/chuwennni" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="credits button-div">
+            <button id="credits" class="hover" onclick="ShowCredits()">Credits</button>
+          </div>
+        </div>
+      </div>
+      <p class="version">ver: 3.5.8.25</p>
+  </div>
+
+  <div class="howToPlayContainer app" style="display: none">
+    <button id="back-button" class="hover"><i class="fa-solid fa-circle-arrow-left" ></i></button>
+    <div class="page1">
+      <h3>First, click Start Game then it will show an option u can choose how many question, time and subject then click continue and the quiz will start</h3>
+    </div>
+  </div>
+  
+  <div class="leaderboards app" style="display: none">
+    <button id="back-button-leader" class="hover"><i class="fa-solid fa-circle-arrow-left" ></i></button>
+    <h1>Coming soon!!</h1>
+  </div>
+  
+  <div class="app" id="gameScreen" style="display: none">
+    <div class="main-game">
+      <div class="settings-title">
+          <button id="back-button-game" class="hover"><i class="fa-solid fa-circle-arrow-left" ></i></button>
+          <h2>SELECT A QUIZ</h2>
+        </div>
+        <div class="settings-option">
+          <div class="quiz hover" onclick="Mathematic()"><h3>MATH</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+          <div class="quiz hover"><h3>COMING SOON!</h3></div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="/Javascript/script.js"></script>
+<script src="/Javascript/main-menu.js"></script>
+</body>
+</html>

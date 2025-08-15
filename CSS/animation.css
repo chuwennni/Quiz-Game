@@ -1,0 +1,31 @@
+.settings-menu.showed, .howToPlayContainer.showed, .leaderboards.showed, #gameScreen.showed{
+  display: flex;
+  animation: show ease 0.5s forwards;
+}
+
+@keyframes show{
+  0%{
+    scale: 0;
+    opacity: 0;
+  }
+  100%{
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.settings-menu.unshowed, .howToPlayContainer.unshowed, .leaderboards.unshowed, #gameScreen.unshowed{
+  display: flex;
+  animation: hide ease 0.5s forwards;
+}
+
+@keyframes hide {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}

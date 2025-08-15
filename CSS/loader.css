@@ -1,0 +1,72 @@
+.loader{
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 78, 107);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: all ease 1s; 
+}
+
+.loader.loader-hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.throbber{
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+}
+
+#throbber1{
+  animation: throbber1 ease 1.5s infinite;
+}
+#throbber2{
+  animation: throbber2 ease 1.5s infinite;
+  animation-delay: 0.1s;
+}
+#throbber3{
+  animation: throbber3 ease 1.5s infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes throbber1 {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0)
+  }
+}
+@keyframes throbber2 {
+  0%{
+    transform: translateY(-100px);
+  }
+  50%{
+    transform: translateY(0)
+  }
+  100%{
+    transform: translateY(-100px);
+  }
+}
+@keyframes throbber3 {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0)
+  }
+}
