@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.select{
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--base-color);
+  color: var(--text-color)
+}
+
+.option{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--transparent);
+  font-size: 1.3rem;
+}
+
+.button-questions, .button-time{
+  width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 95px;
+  padding: 0 5px;
+}
+
+.button-time{
+  text-align: left;
+  gap: 180px;
+  align-items: center;
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-num{
+  width: 30px;
+}
+
+.option-time{
+  width: 150px;
+}

@@ -6,6 +6,7 @@
   --base: hsl(0, 0%, 90%);
   --text-color: black;
   --secondary-text-color: white;
+  --transparent: rgba(0,0,0,0.1);
 }
 
 [data-theme="dark"] {
@@ -40,6 +41,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: var(--bg-color);
+    overflow: hidden;
 }
 
 .app {
@@ -214,7 +216,7 @@ body {
   border-radius: 10px;
   background-color: rgba(0,0,0,0.1);
   backdrop-filter: blur(1.5rem);
-  color: var(--base);
+  color: var(--text-color);
   margin-top: 10px;
   transition: all linear 0.2s;
 }

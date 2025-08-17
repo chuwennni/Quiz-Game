@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizigga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/app.css">
+    <link rel="stylesheet" href="/CSS/loader.css">
+    <link rel="stylesheet" href="/CSS/animation.css">
+    <link rel="stylesheet" href="/CSS/select.css">
+</head>
+<body>
+
+  <div class="loader">
+    <div id="throbber1" class="throbber"></div>
+    <div id="throbber2" class="throbber"></div>
+    <div id="throbber3" class="throbber"></div>
+  </div>
+
+  <div class="select">
+    <div class="question-num">
+      <div class="option">
+        <div class="button-questions">
+          <h3>No. Of Questions</h3>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="options">
+        
+        <div class="option-num">
+          <input type="radio" id="10" name="number">
+          <label for="10">10</label>
+        </div>
+
+        <div class="option-num">
+          <input type="radio" id="15" name="number">
+          <label for="15">15</label>
+        </div>
+
+        <div class="option-num">
+          <input type="radio" id="20" name="number">
+          <label for="20">20</label>
+        </div>
+
+        <div class="option-num">
+          <input type="radio" id="25" name="number">
+          <label for="25">25</label>
+        </div>
+
+        <div class="option-num">
+          <input type="radio" id="30" name="number">
+          <label for="30">30</label>
+        </div>
+      </div>
+    </div>
+    <div class="time">
+      <div class="option">
+        <div class="button-time">
+          <h3>Time</h3>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="options">
+        <div class="option-time">
+          <input type="radio" id="30secs" name="time">
+          <label for="30secs">30 secs</label>
+        </div>
+
+        <div class="option-time">
+          <input type="radio" id="45secs" name="time">
+          <label for="45secs">45 secs</label>
+        </div>
+
+        <div class="option-time">
+          <input type="radio" id="60secs" name="time">
+          <label for="60secs">1 minutes</label>
+        </div>
+
+        <div class="option-time">
+          <input type="radio" id="1min30s" name="time">
+          <label for="1min30s">1 minutes & 30 minutes</label>
+        </div>
+      </div>
+    </div>
+    <button id="submit-button">Start</button>
+  </div>
+
+
+  <script src="/Javascript/script.js"></script>
+</body>
+</html>
