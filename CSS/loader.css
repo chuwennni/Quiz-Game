@@ -70,3 +70,22 @@
     transform: translateY(0)
   }
 }
+
+.loader2{
+  position: relative;
+  top:-10%;
+  left:0;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: all ease 1s; 
+}
+
+.throbber2{
+  width: 100px;
+  height: 100px;
+  background: var(--text-color);
+  border-radius: 50%;
+}

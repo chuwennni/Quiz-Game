@@ -1,11 +1,12 @@
 const settingsMenu = document.querySelector('.settings-menu');
-const closeButton = document.getElementById('close-button');
+const closeButtons = document.getElementById('close-button');
 const backButton = document.getElementById('back-button');
 const backButtonLeader = document.getElementById('back-button-leader');
 const backButtonGame = document.getElementById('back-button-game');
 const HowtoplayMenu = document.querySelector(".howToPlayContainer")
 const Leaderboards = document.querySelector('.leaderboards')
 const gameScreen = document.getElementById('gameScreen')
+const quizGame = document.getElementById('quizGame')
 
 function ShowSettings() {
   settingsMenu.classList.remove('unshowed');
@@ -19,7 +20,7 @@ function ShowHowToPlay(){
   HowtoplayMenu.style.display = 'flex'
 }
 
-closeButton.addEventListener('click', () => {
+closeButtons.addEventListener('click', () => {
   settingsMenu.classList.remove('showed');
   settingsMenu.classList.add('unshowed');
 
@@ -71,3 +72,5 @@ backButtonGame.addEventListener('click', () => {
     gameScreen.removeEventListener('animationend', handler)
   })
 })
+
+

@@ -6,9 +6,12 @@
     <title>Quizigga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="stylesheet" href="/CSS/app.css">
+    <link rel="stylesheet" href="/CSS/math.css">
     <link rel="stylesheet" href="/CSS/loader.css">
     <link rel="stylesheet" href="/CSS/animation.css">
     <link rel="stylesheet" href="/CSS/select.css">
+    <link rel="stylesheet" href="/CSS/breakpoints.css">
+    <link rel="stylesheet" href="/CSS/ui.css">
 </head>
 <body>
 
@@ -18,75 +21,79 @@
     <div id="throbber3" class="throbber"></div>
   </div>
 
-  <div class="select">
-    <div class="question-num">
-      <div class="option">
-        <div class="button-questions">
-          <h3>No. Of Questions</h3>
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="options">
-        
-        <div class="option-num">
-          <input type="radio" id="10" name="number">
-          <label for="10">10</label>
-        </div>
-
-        <div class="option-num">
-          <input type="radio" id="15" name="number">
-          <label for="15">15</label>
-        </div>
-
-        <div class="option-num">
-          <input type="radio" id="20" name="number">
-          <label for="20">20</label>
-        </div>
-
-        <div class="option-num">
-          <input type="radio" id="25" name="number">
-          <label for="25">25</label>
-        </div>
-
-        <div class="option-num">
-          <input type="radio" id="30" name="number">
-          <label for="30">30</label>
-        </div>
-      </div>
+  <div id="selection" class="select fa-border-radius-10">
+    <div class="dropdown">
+    <button class="dropdown-btn">Questions</button>
+    <div class="dropdown-content">
+      <label><input type="radio" name="questions" value="10"><span>10</span></label>
+      <label><input type="radio" name="questions" value="15"><span>15</span></label>
+      <label><input type="radio" name="questions" value="20"><span>20</span></label>
+      <label><input type="radio" name="questions" value="25"><span>25</span></label>
+      <label><input type="radio" name="questions" value="30"><span>30</span></label>
     </div>
-    <div class="time">
-      <div class="option">
-        <div class="button-time">
-          <h3>Time</h3>
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="options">
-        <div class="option-time">
-          <input type="radio" id="30secs" name="time">
-          <label for="30secs">30 secs</label>
-        </div>
-
-        <div class="option-time">
-          <input type="radio" id="45secs" name="time">
-          <label for="45secs">45 secs</label>
-        </div>
-
-        <div class="option-time">
-          <input type="radio" id="60secs" name="time">
-          <label for="60secs">1 minutes</label>
-        </div>
-
-        <div class="option-time">
-          <input type="radio" id="1min30s" name="time">
-          <label for="1min30s">1 minutes & 30 minutes</label>
-        </div>
-      </div>
-    </div>
-    <button id="submit-button">Start</button>
   </div>
 
+  <!-- Dropdown for Time -->
+  <div class="dropdown">
+    <button class="dropdown-btn">Time</button>
+    <div class="dropdown-content">
+      <label><input type="radio" name="time" value="20"><span>20</span></label>
+      <label><input type="radio" name="time" value="30"><span>30</span></label>
+      <label><input type="radio" name="time" value="50"><span>50</span></label>
+      <label><input type="radio" name="time" value="60"><span>60</span></label>
+    </div>
+  </div> 
+    <button id="submit-button">Start</button>
+
+    <div class="loader2">
+      <div id="throbber1" class="throbber2"></div>
+      <div id="throbber2" class="throbber2"></div>
+      <div id="throbber3" class="throbber2"></div>
+  </div>
+  </div>
+  
+  <div class="app" id="quizGame" style="display: none">
+    <div class="top-bar">
+      <button class="icon-btn" id="back-button-quiz">←</button>
+      <span class="round-title">MATH</span>
+    </div>  
+    
+    <div class="time-text" id="timer"></div>
+    <div class="quiz-game">
+      <div class="question-card">
+        <h5 id="question"></h5>
+      </div>
+
+      <div class="question-counter">
+        <span>No of Question</span>
+        <p id="currentQuestions"></p>
+      </div>
+
+     
+
+      <div class="question">
+        <div id="answer1" class="option"></div>
+        <div id="answer2" class="option"></div>
+        <div id="answer3" class="option"></div>
+        <div id="answer4" class="option"></div>
+      </div>
+      <button id="nextButton" class="submit-btn">Next</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="app" id="results" style="display: none">
+      <div class="title-main-game">
+        <h2>Score</h2>
+        <p id="result"></p>
+        <p id="insult"></p>
+      </div>
+      <button class="go-back-button" id="go-back-to-quiz">Restart</button>
+      <button class="go-back-button" id="go-back-to-select">New Game</button>
+    </div>
 
   <script src="/Javascript/script.js"></script>
+  <script type="module" src="/Javascript/select.js"></script>
+  <script type="module" src="/Javascript/questionLoader.js"></script>
 </body>
 </html>

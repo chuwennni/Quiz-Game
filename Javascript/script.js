@@ -32,4 +32,32 @@ function toggleTheme() {
   }
 }
 
-if(darkmode === "active") DarkmodeToggle()
+const dropDownBtn = document.querySelectorAll('.dropdown-btn');
+const DropDownInput = document.querySelectorAll('.dropdown input[type="radio"]');
+
+dropDownBtn.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parent = btn.parentElement;
+        parent.classList.toggle('open');
+      });
+    });
+
+DropDownInput.forEach(radio => {
+  radio.addEventListener('change', function () {
+    const dropdown = this.closest('.dropdown');
+    const button = dropdown.querySelector('.dropdown-btn');
+    button.textContent = this.value; 
+    dropdown.classList.remove('open');
+  });
+});
+
+window.addEventListener('click', (e) => {
+  document.querySelectorAll('.dropdown').forEach(drop => {
+    if (!drop.contains(e.target)) {
+      drop.classList.remove('open');
+    }
+  });
+})
+
+  
+if(darkmode === "active") DarkmodeToggle();

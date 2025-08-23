@@ -1,4 +1,4 @@
-.settings-menu.showed, .howToPlayContainer.showed, .leaderboards.showed, #gameScreen.showed{
+.settings-menu.showed, .howToPlayContainer.showed, .leaderboards.showed, #gameScreen.showed, #quizGame.showed, #selection.showed, #results.showed{
   display: flex;
   animation: show ease 0.5s forwards;
 }
@@ -14,7 +14,7 @@
   }
 }
 
-.settings-menu.unshowed, .howToPlayContainer.unshowed, .leaderboards.unshowed, #gameScreen.unshowed{
+.settings-menu.unshowed, .howToPlayContainer.unshowed, .leaderboards.unshowed, #gameScreen.unshowed, #quizGame.unshowed{
   display: flex;
   animation: hide ease 0.5s forwards;
 }
@@ -28,4 +28,8 @@
     scale: 0;
     opacity: 0;
   }
+}
+
+.option.selected{
+  scale: 1.02;
 }
