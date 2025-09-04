@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.80, maximum-scale=0.80, user-scalable=no" />
+  <title>Quizzer</title>
+  <link rel="icon" type="image/png" href="/icon/icon-for-quiz-app-__1_-removebg-preview.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="/CSS/app.css" />
+  <link rel="stylesheet" href="/CSS/loader.css" />
+  <link rel="stylesheet" href="/CSS/select.css" />
+  <link rel="stylesheet" href="/CSS/animation.css" />
+  <link rel="stylesheet" href="/CSS/breakpoints.css" />
+  <link rel="stylesheet" href="/CSS/ui.css" />
+</head>
+
+<body>
+  <div class="loader">
+    <div id="throbber1" class="throbber"></div>
+    <div id="throbber2" class="throbber"></div>
+    <div id="throbber3" class="throbber"></div>
+  </div>
+
+  <div class="app">
+    <div class="title">
+      <img src="../icon/quizzer.png" alt="quizzer" width="300px" />
+      <p>
+        <small>"Test your knowledge, ACLCIANS are smart, are you?"</small>
+      </p>
+    </div>
+    <div class="buttons">
+      <button id="start-game" class="hover" onclick="GoToGame()">
+        Start Game
+      </button>
+      <button id="settings" onclick="ShowSettings()" class="hover">
+        Settings
+      </button>
+      <button id="leaderboard" onclick="ShowLeaderboards(), loadLeaderboard()" class="hover">
+        LeaderBoards
+      </button>
+    </div>
+  </div>
+
+  <div class="settings-menu app hidden">
+    <div class="settings-options">
+      <div class="settings-title">
+        <button id="close-button" class="hover">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <h2>Settings</h2>
+      </div>
+      <div class="settings-option">
+        <div class="dark-mode button-div">
+          <p>Dark Mode</p>
+          <button class="settingsButton hover" id="darkmode-button" onclick="toggleTheme()">
+            <i class="fa-solid fa-moon" id="dark-mode-icon"></i>
+          </button>
+        </div>
+        <div class="how-to-play button-div">
+          <p>How To Play:</p>
+          <button class="settingsButton hover" id="howToPlayBtn" onclick="ShowHowToPlay()">
+            <i class="fa-solid fa-question-circle"></i>
+          </button>
+        </div>
+        <div class="contact">
+          <h3>Contact us</h3>
+          <div class="facebook button-div">
+            <p>Facebook</p>
+            <a class="settingsButton hover" href="http://www.facebook.com/christiandale.dechavez.9/" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+          <div class="github button-div">
+            <p>Github</p>
+            <a class="settingsButton hover" href="http://www.github.com/chuwennni" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="credits button-div">
+          <button id="credits" class="hover" onclick="ShowCredit()">
+            Credits
+          </button>
+        </div>
+        <div class="logout button-div">
+          <button id="logout-btn">LogOut</button>
+        </div>
+      </div>
+    </div>
+    <p class="version">ver: 5.30.8.25</p>
+  </div>
+
+  <!-- ✅ How to Play Modal -->
+  <div class="howToPlayContainer" style="display: none">
+    <div class="howToPlayContent">
+      <span id="closeHowTo" class="closeBtn">&times;</span>
+      <p id="howContent"></p>
+      <div class="howButtons">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app" id="CreditsContainer" style="display: none">
+    <button id="back-button-credits" class="hover">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="credit-content">
+      <div class="credit">
+        <h1>Credits</h1>
+
+        <h2>Developers</h2>
+        <p>Christian Dale De Chavez</p>
+
+        <h2>Design & Art</h2>
+        <p>Queenerich Danila</p>
+
+        <h2>Music & Sound</h2>
+        <p>Queenerich Danila</p>
+        <p>Christian Dale De Chavez</p>
+
+        <h2>Special Thanks</h2>
+        <p>Thomas Changco</p>
+
+        <h2>Message from the Developer</h2>
+        <p>
+          Hello! Thank you for playing the game! <br /><br />
+          I’m the developer, <strong>Christian Dale De Chavez</strong>,
+          currently the ICT Representative. <br /><br />
+          I started developing this game on <strong>July 20, 2025</strong>,
+          and finished the first version on <strong>July 30, 2025</strong>. I
+          showed it to my classmates, and one of them,
+          <strong>Mr. Thomas Changco</strong>, requested that I rebuild the
+          game and make it better. I followed his suggestions to improve this
+          Quiz Game. <br /><br />
+          This game also wouldn’t have its modern look without my girlfriend,
+          <strong>Ms. Queenerich Danila</strong>, who helped pick the color
+          palette and all the sound effects. <br /><br />
+          Thank you again, guys, for playing! If you find any bugs or have
+          concerns, you can always reach out to me on my Facebook account.
+          <br /><br />
+          I hope you have fun and enjoy the game!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="leaderboards app hidden">
+    <button id="back-button-leader" class="hover">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <h2>🏆 Leaderboard</h2>
+    <ul id="leaderboard-list"></ul>
+  </div>
+
+  <div class="app hidden" id="gameScreen">
+    <div class="main-game">
+      <div class="settings-title">
+        <button id="back-button-game" class="hover">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <h2>SELECT A QUIZ</h2>
+      </div>
+      <div class="settings-option">
+        <div id="mathsub" class="quiz hover" onclick="selectSubject('math')">
+          <h3>MATH</h3>
+        </div>
+        <div id="sciencesub" class="quiz hover" onclick="selectSubject('science')">
+          <h3>SCIENCE</h3>
+        </div>
+        <div id="oralsub" class="quiz hover" onclick="selectSubject('oral')">
+          <h3>ORAL COMMNICATION</h3>
+        </div>
+        <div class="quiz hover">
+          <h3>COMING SOON!</h3>
+        </div>
+        <div class="quiz hover">
+          <h3>COMING SOON!</h3>
+        </div>
+        <div class="quiz hover">
+          <h3>COMING SOON!</h3>
+        </div>
+        <div class="quiz hover">
+          <h3>COMING SOON!</h3>
+        </div>
+        <div class="quiz hover">
+          <h3>COMING SOON!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popup-message"></p>
+      <button id="popup-btn">OK</button>
+    </div>
+  </div>
+
+
+  <!-- <script type="module" >
+      import '../javascript/authGuard.js'
+    </script> -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="/Javascript/script.js"></script>
+  <script src="/Javascript/main-menu.js"></script>
+  <script src="/Javascript/sound effects.js"></script>
+  <script src="/Javascript/howtoplay.js"></script>
+  <script type="module" src="../Javascript/leaderboards.js"></script>
+  <script type="module" src="../Javascript/logout.js"></script>
+</body>
+
+</html>

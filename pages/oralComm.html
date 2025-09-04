@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.80, maximum-scale=0.80, user-scalable=no"
+    />
+    <title>Quizzer</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/icon/icon-for-quiz-app-__1_-removebg-preview (1).png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/app.css" />
+    <link rel="stylesheet" href="/CSS/math.css" />
+    <link rel="stylesheet" href="/CSS/loader.css" />
+    <link rel="stylesheet" href="/CSS/animation.css" />
+    <link rel="stylesheet" href="/CSS/select.css" />
+    <link rel="stylesheet" href="/CSS/breakpoints.css" />
+    <link rel="stylesheet" href="/CSS/ui.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <div id="throbber1" class="throbber"></div>
+      <div id="throbber2" class="throbber"></div>
+      <div id="throbber3" class="throbber"></div>
+    </div>
+
+    <div id="selection" class="app fa-border-radius-10">
+      <button
+        class="back-button-quiz hover"
+        onclick="window.location.href = 'main-menu.html'"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="dropdown">
+        <button class="dropdown-btn">Questions</button>
+        <div class="dropdown-content">
+          <label
+            ><input type="radio" name="questions" value="10" /><span
+              >10</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="questions" value="15" /><span
+              >15</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="questions" value="20" /><span
+              >20</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="questions" value="25" /><span
+              >25</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="questions" value="30" /><span
+              >30</span
+            ></label
+          >
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-btn">Time</button>
+        <div class="dropdown-content">
+          <label
+            ><input type="radio" name="time" value="60" /><span
+              >1min</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="time" value="120" /><span
+              >2min</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="time" value="180" /><span
+              >3min</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="time" value="240" /><span
+              >4min</span
+            ></label
+          >
+        </div>
+      </div>
+      <button id="submit-button">Start</button>
+    </div>
+
+    <div class="app" id="quizGame" style="display: none">
+      <div class="top-bar">
+        <button class="icon-btn" id="back-button-quiz">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <span class="round-title">ORAL COMMS</span>
+      </div>
+
+      <div class="time-text" id="timer"></div>
+      <div class="quiz-game">
+        <div class="question-card">
+          <h5 id="question"></h5>
+        </div>
+
+        <div class="question-counter">
+          <span>No of Question</span>
+          <p id="currentQuestions"></p>
+        </div>
+
+        <div class="question">
+          <div id="answer1" class="option"></div>
+          <div id="answer2" class="option"></div>
+          <div id="answer3" class="option"></div>
+          <div id="answer4" class="option"></div>
+        </div>
+        <button id="nextButton" class="submit-btn">Next</button>
+      </div>
+    </div>
+
+    <div class="app" id="results" style="display: none">
+      <div class="title-main-game">
+        <h2>Score</h2>
+        <p id="result"></p>
+        <p id="insult"></p>
+      </div>
+      <button class="go-back-button" id="go-back-to-quiz">Restart</button>
+      <button class="go-back-button" id="go-back-to-select">New Game</button>
+    </div>
+
+    <script src="/Javascript/script.js"></script>
+    <script src="/Javascript/sound effects.js"></script>
+    <script type="module" src="/Javascript/select.js"></script>
+    <script type="module" src="/Javascript/questionLoader.js"></script>
+  </body>
+</html>

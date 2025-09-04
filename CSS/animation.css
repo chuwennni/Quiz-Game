@@ -1,4 +1,4 @@
-.settings-menu.showed, .howToPlayContainer.showed, .leaderboards.showed, #gameScreen.showed, #quizGame.showed, #selection.showed, #results.showed{
+.settings-menu.showed, .howToPlayContainer.showed, .leaderboards.showed, #gameScreen.showed, #quizGame.showed, #selection.showed, #results.showed, #CreditsContainer.showed{
   display: flex;
   animation: show ease 0.5s forwards;
 }
@@ -14,10 +14,11 @@
   }
 }
 
-.settings-menu.unshowed, .howToPlayContainer.unshowed, .leaderboards.unshowed, #gameScreen.unshowed, #quizGame.unshowed{
+.settings-menu.unshowed, .howToPlayContainer.unshowed, .leaderboards.unshowed, #gameScreen.unshowed, #quizGame.unshowed, #CreditsContainer.unshowed{
   display: flex;
   animation: hide ease 0.5s forwards;
 }
+
 
 @keyframes hide {
   0% {
@@ -30,6 +31,67 @@
   }
 }
 
+@keyframes ticking {
+  0%{
+    color: var(--text-color)
+  }
+  100%{
+    color: red;
+  }
+}
+.register {
+  display: flex; /* or block */
+  transition: transform 0.5s ease; /* fallback */
+}
+
+.register.unshowed {
+  animation: slide 0.5s ease forwards;
+}
+
+.Login.showed {
+  animation: slideRight 0.5s ease forwards;
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+
+#timer.ticking{
+  animation: ticking 0.8s linear infinite;
+}
+
+.option.selected::before{
+  width: 100%;
+}
+
+.option.correct::before{
+  width: 100%;
+  background: hsl(120, 100%, 37%);
+}
+
+.option.wrong::before{
+  background: red;
+}
 .option.selected{
-  scale: 1.02;
+  color: var(--secondary-text-color)
 }

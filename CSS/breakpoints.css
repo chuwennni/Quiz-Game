@@ -5,10 +5,13 @@
     height: 900px;
   }
 
+  
+
   .question-card{
     width: 800px;
   }
 
+  
   .select{
     width: 500px;
   }
@@ -16,18 +19,22 @@
   #leaderboard, #settings, #start-game{
     width: 500px;
   }
-
-  #close-button, #back-button, #back-button-leader, #back-button-game{
+  
+  #close-button, #back-button, #back-button-leader, #back-button-game, #back-button-credits, .back-button-quiz{
     top: 10%;
     left: 10%;
   }  
+
+  .back-button-quiz{
+    left: 30%
+  }
 }
 
 
 @media (max-width: 1024px) {
   .app{
-    width: 800px;
-    height: 900px;
+    width: 700px;
+    height: 800px;
   }
 
   .question-card{
@@ -38,53 +45,77 @@
     width: 500px;
   }
 
-  #close-button, #back-button, #back-button-leader, #back-button-game{
+  #close-button, #back-button, #back-button-leader, #back-button-game, .back-button-quiz{
     top: 10%;
     left: 10%;
   }  
+
+  
 }
 
 @media (max-width: 768px){
   .app{
-    width: 500px;
-    height: 900px;
+    width: 450px;
+    height: 700px;
   }
+
+  .app2{
+    width: 500px;
+  }
+
+  #email, #password, #email-login, #password-login, #nickname {
+    width: 400px;
+  }  
 
   .question-card{
     width: 400px;
   }
 
   #leaderboard, #settings, #start-game{
-    width: 400px;
+    width: 350px;
   }
 
-  #close-button, #back-button, #back-button-leader, #back-button-game{
+  #close-button, #back-button, #back-button-leader, #back-button-game, #back-button-credits, .back-button-quiz{
     top: 10%;
     left: 10%;
   }  
+
+
 }
 
 
 @media (max-width: 576px) {
   .app{
-    width: 390px;
-    height: 700px;
+    width: 360px;
+    height: 630px;
   }
+
+  .app2{
+    width: 400px;
+  }
+
+  #email, #password, #email-login, #password-login, #nickname {
+    width: 310px;
+  }  
+
+  #submit-register, #submit-login {
+    width: 300px;
+  }  
 
   .question-card{
     width: 300px;
   }
 
   .select{
-    width: 370px;
+    width: 350px;
     height: 500px;
   }
    
   #leaderboard, #settings, #start-game{
-    width: 300px;
+    width: 250px;
   }
 
-  #close-button, #back-button, #back-button-leader, #back-button-game{
+  #close-button, #back-button, #back-button-leader, #back-button-game, #back-button-credits, .back-button-quiz{
     top: 10%;
     left: 10%;
   }  

@@ -4,15 +4,8 @@
   box-sizing: border-box;
 }
 
-.select{
-  width: 800px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--base-color);
-  color: var(--text-color)
+#selection{
+  position: relative;
 }
 
 .dropdown {
@@ -65,6 +58,23 @@
   display: none;
 }
 
+.app2 {
+  background: var(--base-color);
+  overflow: hidden;
+  width: 700px;
+  height: 700px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  color: var(--text-color)
+}
+
+
 #submit-button{
   width: 200px;
   height: 30px;
@@ -74,4 +84,109 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+}
+
+.email, .password{
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color)
+}
+
+.register, .Login{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+}
+
+#email, #password, #email-login, #password-login, #nickname {
+  width: 600px;
+  height: 50px;
+  font-size: 2rem;
+  padding: 10px 15px;
+  outline: none;
+  background-color: var(--transparent);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.email{
+  margin-top: 130px;
+}
+
+.password{
+  margin-bottom: 70px;
+}
+
+#submit-register, #submit-login {
+  width: 400px;
+  height: 70px;
+  background: white;
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  border: 2px solid black; 
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+input::placeholder{
+  color: hsl(0, 0%, 43%);
+}
+
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.popup.hidden {
+  display: none;
+}
+.popup-content {
+  background: white;
+  font-size: 2.5rem;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease;
+}
+
+#popup-btn{
+  width: 100px;
+  height: 30px;
+  background: var(--tertiary-color);
+  border: none;
+  color: var(--text-color);
+  border-radius: 10px;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+a{
+  color: var(--tertiary-color)
 }

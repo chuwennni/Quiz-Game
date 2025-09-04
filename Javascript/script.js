@@ -1,5 +1,9 @@
 const loader = document.querySelector('.loader')
 const darkmodeIcon = document.getElementById('dark-mode-icon')
+const registerContainer = document.querySelector('.register');
+const loginContainer = document.querySelector('.Login');
+const switchBtn = document.getElementById('switch');
+const switchBackBtn = document.getElementById('switch-back');
 
 window.onload = () => {
   loader.classList.add('loader-hidden')
@@ -9,28 +13,7 @@ window.onload = () => {
   })
 }
 
-let darkmode = localStorage.getItem('darkmode')
 
-const DarkmodeToggle = () => {
-  document.documentElement.setAttribute("data-theme", "dark")
-  localStorage.setItem('darkmode', "active")
-  darkmodeIcon.classList.replace('fa-moon', 'fa-sun')
-}
-
-const DarkmodeUnToggle = () => {
-  document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem('darkmode', null)
-  darkmodeIcon.classList.replace('fa-sun', 'fa-moon')
-}
-
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  if (currentTheme === "dark") {
-    DarkmodeUnToggle()
-  } else {
-    DarkmodeToggle()
-  }
-}
 
 const dropDownBtn = document.querySelectorAll('.dropdown-btn');
 const DropDownInput = document.querySelectorAll('.dropdown input[type="radio"]');
@@ -59,5 +42,33 @@ window.addEventListener('click', (e) => {
   });
 })
 
-  
-if(darkmode === "active") DarkmodeToggle();
+let darkmode = localStorage.getItem('darkmode')
+
+const DarkmodeToggle = () => {
+  document.documentElement.setAttribute("data-theme", "dark")
+  localStorage.setItem('darkmode', "active")
+  darkmodeIcon.classList.replace('fa-moon', 'fa-sun')
+}
+
+const DarkmodeUnToggle = () => {
+  document.documentElement.setAttribute("data-theme", "light");
+  localStorage.setItem('darkmode', "inactive") // instead of null
+  darkmodeIcon.classList.replace('fa-sun', 'fa-moon')
+}
+
+// Load saved theme on page refresh
+if (darkmode === "active") {
+  DarkmodeToggle();
+} else {
+  DarkmodeUnToggle(); // keep consistent
+}
+
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  if (currentTheme === "dark") {
+    DarkmodeUnToggle()
+  } else {
+    DarkmodeToggle()
+  }
+}

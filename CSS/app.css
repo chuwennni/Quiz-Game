@@ -23,12 +23,11 @@
   src: url(../font/Poppins.ttf);
 }
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html{
@@ -36,40 +35,40 @@ html{
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--bg-color);
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-color);
+  overflow: hidden;
 }
 
 .app {
-    background: var(--base-color);
-    width: 1300px;
-    height: 700px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: var(--base-color);
+  width: 1300px;
+  height: 700px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .title{
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 300px;
+  margin-bottom: 160px;
   color: var(--text-color);
 }
 
 .buttons{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 #start-game,#leaderboard,#settings{
@@ -115,7 +114,7 @@ body {
   justify-content: center;
   gap: 5px;
   height: 400px;
-  text-align: left  ;
+  text-align: left;
 }
 
 .settings-title{
@@ -125,7 +124,7 @@ body {
   font-size: 2.5rem;
 }
 
-#close-button, #back-button, #back-button-leader, #back-button-game{
+#close-button, #back-button, #back-button-leader, #back-button-game, #back-button-credits, .back-button-quiz{
   width: 100px;
   height: 40px;
   position: absolute;
@@ -158,16 +157,16 @@ body {
   text-decoration: none;
 }
 
-
-#credits{
+#credits, #logout-btn{
   width: 300px;
   height: 40px;
   background-color: var(--base);
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
-.howToPlayContainer{
+#CreditsContainer{
   position: absolute;
   display: none;
   flex-direction: column;
@@ -175,6 +174,28 @@ body {
   justify-content: center;
   color: var(--text-color);
   font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.credit-content {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  0% { bottom: -100%; }
+  100% { bottom: 100%; }
+}
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+h2 {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.5em;
+  text-decoration: underline;
 }
 
 .page1{
@@ -224,6 +245,93 @@ body {
   background-color: var(--base);
   color: var(--base-color)
 }
+.howToPlayContainer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+.howToPlayContainer.show {
+  display: flex;
+}
 
+.howToPlayContent {
+  background: var(--base-color);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 85%;
+  max-width: 720px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  animation: slideUp 0.3s ease;
+  color: var(--text-color);
+}
 
+#howContent {
+  font-size: 1.6rem;
+  margin: 1.8rem 0;
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+.howButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+#prevBtn,
+#nextBtn {
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+#prevBtn {
+  background: #e0e0e0;
+  color: #333;
+}
+#prevBtn:hover {
+  background: #cfcfcf;
+}
+
+#nextBtn {
+  background: #007bff;
+  color: #fff;
+}
+#nextBtn:hover {
+  background: #0056b3;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.closeBtn:hover {
+  color: #dc3545;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.leaderboards{
+  text-decoration: none;
+}

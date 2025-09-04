@@ -3,10 +3,14 @@ const closeButtons = document.getElementById('close-button');
 const backButton = document.getElementById('back-button');
 const backButtonLeader = document.getElementById('back-button-leader');
 const backButtonGame = document.getElementById('back-button-game');
+const backButtonCredits = document.getElementById('back-button-credits');
 const HowtoplayMenu = document.querySelector(".howToPlayContainer")
 const Leaderboards = document.querySelector('.leaderboards')
 const gameScreen = document.getElementById('gameScreen')
 const quizGame = document.getElementById('quizGame')
+const CreditsContainer = document.getElementById('CreditsContainer');
+
+
 
 function ShowSettings() {
   settingsMenu.classList.remove('unshowed');
@@ -30,17 +34,6 @@ closeButtons.addEventListener('click', () => {
   });
 });
 
-backButton.addEventListener('click', () => {
-  HowtoplayMenu.classList.remove('showed');
-  HowtoplayMenu.classList.add('unshowed')
-
-  HowtoplayMenu.addEventListener('animationend', function handler() {
-    HowtoplayMenu.style.display = 'none'
-    HowtoplayMenu.removeEventListener('animationend', handler)
-  })
-})
-
-
 function ShowLeaderboards() {
   Leaderboards.classList.remove('unshowed');
   Leaderboards.classList.add('showed');
@@ -56,6 +49,24 @@ backButtonLeader.addEventListener('click', () => {
     Leaderboards.removeEventListener('animationend', handler)
   })
 })
+
+function ShowCredit() {
+  CreditsContainer.classList.remove('unshowed');
+  CreditsContainer.classList.add('showed');
+  CreditsContainer.style.display = 'flex';
+}
+
+backButtonCredits.addEventListener('click', () => {
+  CreditsContainer.classList.remove('showed');
+  CreditsContainer.classList.add('unshowed')
+
+  CreditsContainer.addEventListener('animationend', function handler() {
+    CreditsContainer.style.display = 'none'
+    CreditsContainer.removeEventListener('animationend', handler)
+  })
+})
+
+
 
 function GoToGame() {
   gameScreen.classList.remove('unshowed');
@@ -73,4 +84,19 @@ backButtonGame.addEventListener('click', () => {
   })
 })
 
+
+document.getElementById("mathsub").addEventListener("click", () => {
+  localStorage.setItem("subject", "math");
+  window.location.href = "math.html"; 
+});
+
+document.getElementById("sciencesub").addEventListener("click", () => {
+  localStorage.setItem("subject", "science");
+  window.location.href = "science.html"; 
+});
+
+document.getElementById("oralsub").addEventListener("click", () => {
+  localStorage.setItem("subject", "oral");
+  window.location.href = "oralComm.html"; 
+});
 
